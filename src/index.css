@@ -1,0 +1,373 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  height: 100vh;
+  background-color: #222831;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
+    monospace;
+}
+
+#root {
+  width: 95vw;
+  height: 100%;
+}
+
+#root > div {
+  width: 100%;
+  height: 100%;
+}
+
+#root > div > div {
+  width: 100%;
+  height: 100%;
+}
+
+#year {
+  width: 100%;
+  height: 100%;
+  padding: 2%;
+}
+
+#y_container {
+  height: 80%;
+}
+
+#y_name {
+  margin-left: 10%;
+  font-size: 50px;
+  margin-top: 0;
+  margin-bottom: 20px;
+  color: #eeeeee;
+}
+
+.monthTileButton {
+  width: 15%;
+  height: 40%;
+  background-color: #2d4059;
+  display: inline-block;
+  margin: 5px;
+  cursor: pointer;
+}
+
+.monthTileButtonContent {
+  transition: 0.5s;
+  width: 100%;
+  height: 100%;
+  display: grid;
+  place-items: center;
+  color: #a8b5c5;
+  font-weight: 700;
+  font-size: 2em;
+}
+
+.monthTileButton:hover .monthTileButtonContent {
+  color: #eeeeee;
+  background-color: #44556c;
+}
+
+.monthHeader {
+  width: 100%;
+  color: #eee;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  font-size: 3em;
+  gap: 5px;
+  margin-bottom: 50px;
+}
+
+.monthHeader > button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.monthHeader > button > * {
+  color: #a8b5c5;
+  font-size: 2em;
+  transition: 0.5s;
+}
+
+.monthHeader > button:hover > * {
+  color: #ccc;
+  font-size: 2em;
+}
+
+.weekTileButton {
+  margin: 10px;
+  background-color: #2d4059;
+  padding: 30px;
+  font-size: 3em;
+  color: #96a5b8;
+  transition: 0.5s;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.weekTileButton:hover {
+  background-color: #44556c;
+  color: #96a5b8;
+}
+
+.weekTileButton .weekTileContent {
+  transition: 0.5s;
+  width: 100%;
+}
+
+.weekTileButton:hover .weekTileContent {
+  transform: translateX(100px);
+}
+
+.weekHeader {
+  width: 100%;
+  color: #eee;
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  font-size: 3em;
+  gap: 5px;
+  margin-bottom: 50px;
+  margin-top: 25px;
+}
+
+.weekHeader > button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.weekHeader > button > * {
+  color: #a8b5c5;
+  font-size: 2em;
+  transition: 0.5s;
+}
+
+.weekHeader > button:hover > * {
+  color: #ccc;
+  font-size: 2em;
+}
+
+.weekContent {
+  display: flex;
+  width: 100%;
+}
+
+.dayFalse {
+  background-color: #333a44;
+  color: #44556c;
+  flex-grow: 1;
+  height: 50vh;
+  display: grid;
+  place-items: center;
+  flex-grow: 1;
+  height: 50vh;
+  margin: 5px;
+}
+
+.dayFalse > div {
+  font-size: 50px;
+}
+
+.dayViev {
+  flex-grow: 1;
+  margin: 5px;
+  background-color: #2d4059;
+  height: 50vh;
+
+  color: #eeeeee;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+}
+
+.dayVievHeader {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 50px;
+}
+
+.dayVievHeader > button {
+  background: none;
+  border: none;
+  cursor: pointer;
+}
+
+.dayVievHeader > button > * {
+  color: #a8b5c5;
+  font-size: 2em;
+  transition: 0.5s;
+}
+
+.dayVievHeader > button:hover > * {
+  color: #ccc;
+  font-size: 2em;
+}
+
+.inputField {
+}
+
+.inputDay {
+  font-size: 20px;
+  background: none;
+  color: #ff5722;
+  border: none;
+  border-bottom: 2px solid #c8431a;
+}
+
+.m_name {
+  width: 100%;
+  text-align: center;
+  padding-top: 5px;
+  font-size: 30px;
+  color: #eeeeee;
+  flex: 0 1 auto;
+}
+
+.m_content {
+  display: flex;
+  flex-flow: column;
+  height: 100%;
+}
+
+.m_center {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  flex: 1 1 auto;
+}
+
+.m_center > .day {
+  margin: 2px;
+  min-height: 3vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25vw;
+  color: #eeeeee;
+  transition: font-size 2s, background-color 0.5s;
+}
+
+.m_center > .day:hover {
+  background-color: #44556c;
+}
+
+.day.targeted {
+  background-color: #ff5722;
+  font-weight: 700;
+}
+
+.day.targeted:hover {
+  background-color: #c8431a;
+}
+
+.flexC {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+  font-size: 1.5em;
+}
+
+.flexC button {
+  background: none;
+  border: none;
+  outline: none;
+  cursor: pointer;
+  color: #eeeeee;
+  font-size: 0.5em;
+}
+
+.flexC button:hover * {
+  color: #222831;
+}
+
+.day_form {
+  width: 100%;
+  height: 100%;
+}
+
+.day_form > div {
+  width: 100%;
+  height: 100%;
+}
+
+.day_form textarea {
+  flex: 1 1 auto;
+  resize: none;
+  background-color: #c8431a;
+  overflow: auto;
+  border: 1px solid #2d4059;
+  outline: none;
+  color: white;
+  padding: 5px;
+  font-size: 18px;
+}
+
+.flex_grow {
+  display: flex;
+  flex-flow: column;
+}
+
+.row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 5px;
+}
+
+.row * {
+  font-size: 3vw;
+  background: none;
+  border: none;
+  outline: none;
+  color: #eeeeee;
+}
+
+.row button * {
+  cursor: pointer;
+  font-size: 1.5vw !important;
+  color: #96a5b8;
+}
+
+.row button:hover * {
+  color: #ff5722;
+}
+
+.y_row {
+  display: flex;
+  justify-content: center;
+  gap: 5px;
+}
+
+.y_row button {
+  background: none;
+  border: none;
+  color: #eeeeee;
+  cursor: pointer;
+}
+
+.y_row button * {
+  font-size: 3vh;
+}
+
+.number_day {
+  margin-right: 30px;
+}
